@@ -4,35 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin - ServySoft</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <!-- HEADER -->
-<header>
-  <div class="logo">
-    <a href="index.html">
+  <header>
+    <div class="logo">
+      <a href="index.html">
       <img src="img/ServySoftLogo.png" alt="ServySoft Logo">
-    </a>
-  </div>
-
-  <nav class="menu-derecha">
+      </a>
+    </div>
     <div class="menu-hamburguesa">
-      <span class="menu-text">Menú</span>
-      <div class="hamburguesa-icono">
-        <span></span>
-        <span></span>
-        <span></span>
+      <p>Menú</p>
+      <div class="icono">&#9776;</div>
+    </div>
+    <nav class="menu-opciones">
+      <ul>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Creación</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <div class="tarjeta-producto" id="producto1">
+      <div class="detalle-producto">
+        <h2>TV Challenger 32”</h2>
+        <ul>
+          <li>Medidas del TV: 72,8 x 42,6 x 7,9</li>
+          <li>N° de puertos HDMI: 2</li>
+          <li>Tipo de pantalla: LED</li>
+          <li>Resolución: HD</li>
+          <li>Tamaño: 32”</li>
+        </ul>
+        <p class="precio">$675.500</p>
+      </div>
+      <div class="imagen-producto">
+        <img src="img/TVEdita.png" alt="TV Challenger">
+      </div>
+      <div class="acciones">
+        <button class="editar"><i>✏️</i></button>
+        <button class="eliminar"><i>🗑️</i></button>
       </div>
     </div>
-  </nav>
-</header>
 
+    <!-- FORMULARIO DE EDICIÓN (oculto al inicio) -->
+    <form id="form-edicion" class="form-edicion" style="display:none;">
+      <h3>Editar producto</h3>
+      <label>Nombre:</label>
+      <input type="text" id="nombre" value="TV Challenger 32”">
+      
+      <label>Medidas:</label>
+      <input type="text" id="medidas" value="72,8 x 42,6 x 7,9">
 
+      <label>Puertos HDMI:</label>
+      <input type="text" id="puertos" value="2">
 
+      <label>Tipo de pantalla:</label>
+      <input type="text" id="pantalla" value="LED">
 
+      <label>Resolución:</label>
+      <input type="text" id="resolucion" value="HD">
 
+      <label>Tamaño:</label>
+      <input type="text" id="tamano" value="32”">
 
+      <label>Precio:</label>
+      <input type="text" id="precio" value="$675.500">
 
-  <script src="js/app.js"></script>
+      <button type="button" id="guardar">Guardar Cambios</button>
+    </form>
+  </main>
+
+  <script src="js/admin.js"></script>
 </body>
 </html>
